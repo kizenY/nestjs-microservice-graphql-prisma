@@ -1,22 +1,13 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nestjs-microservice-graphql-prisma/src",
+  "sourceRoot": "apps/gateway/src",
   "monorepo": true,
-  "root": "apps/nestjs-microservice-graphql-prisma",
+  "root": "apps/gateway",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/nestjs-microservice-graphql-prisma/tsconfig.app.json"
+    "tsConfigPath": "apps/gateway/tsconfig.app.json"
   },
   "projects": {
-    "nestjs-microservice-graphql-prisma": {
-      "type": "application",
-      "root": "apps/nestjs-microservice-graphql-prisma",
-      "entryFile": "main",
-      "sourceRoot": "apps/nestjs-microservice-graphql-prisma/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/nestjs-microservice-graphql-prisma/tsconfig.app.json"
-      }
-    },
     "gateway": {
       "type": "application",
       "root": "apps/gateway",
