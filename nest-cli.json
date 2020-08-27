@@ -1,0 +1,48 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-microservice-graphql-prisma/src",
+  "monorepo": true,
+  "root": "apps/nestjs-microservice-graphql-prisma",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-microservice-graphql-prisma/tsconfig.app.json"
+  },
+  "projects": {
+    "nestjs-microservice-graphql-prisma": {
+      "type": "application",
+      "root": "apps/nestjs-microservice-graphql-prisma",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-microservice-graphql-prisma/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-microservice-graphql-prisma/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "auth": {
+      "type": "application",
+      "root": "apps/auth",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth/tsconfig.app.json"
+      }
+    },
+    "tender": {
+      "type": "application",
+      "root": "apps/tender",
+      "entryFile": "main",
+      "sourceRoot": "apps/tender/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tender/tsconfig.app.json"
+      }
+    }
+  }
+}
