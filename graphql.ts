@@ -17,11 +17,25 @@ export interface CreateProjectInput {
     description?: string;
 }
 
-export interface ProjectOfManager {
+export interface Bidding {
+    id?: string;
+    biddingDeadline?: GraphQLTimestamp;
+    suppliers?: Supplier[];
+    project?: Project[];
+}
+
+export interface Supplier {
+    id?: string;
+    code: string;
+    bidding?: Bidding[];
+}
+
+export interface Project {
     id?: string;
     name?: string;
     description?: string;
     status?: ProjectStatus;
+    bidding?: Bidding;
 }
 
 export interface ProjectOfSupplier {
@@ -39,14 +53,16 @@ export interface ProjectOfEvaluator {
 }
 
 export interface IQuery {
-    projectOfManager(id?: string): ProjectOfManager | Promise<ProjectOfManager>;
+    projectOfManager(id?: string): Project | Promise<Project>;
     projectOfSupplier(id?: string): ProjectOfSupplier | Promise<ProjectOfSupplier>;
     projectOfEvaluator(id?: string): ProjectOfEvaluator | Promise<ProjectOfEvaluator>;
-    projectsOfManager(page?: number, size?: number): ProjectOfManager[] | Promise<ProjectOfManager[]>;
-    projectsOfSupplier(page?: number, size?: number): ProjectOfSupplier[] | Promise<ProjectOfSupplier[]>;
-    projectsOfEvaluator(page?: number, size?: number): ProjectOfEvaluator[] | Promise<ProjectOfEvaluator[]>;
+    projectsOfManager(page?: number, size?: number, cursor?: string): Project[] | Promise<Project[]>;
+    projectsOfSupplier(page?: number, size?: number, cursor?: string): ProjectOfSupplier[] | Promise<ProjectOfSupplier[]>;
+    projectsOfEvaluator(page?: number, size?: number, cursor?: string): ProjectOfEvaluator[] | Promise<ProjectOfEvaluator[]>;
 }
 
 export interface IMutation {
-    createProject(data?: CreateProjectInput): ProjectOfManager | Promise<ProjectOfManager>;
+    createProject(data?: CreateProjectInput): Project | Promise<Project>;
 }
+
+export type GraphQLTimestamp = any;

@@ -1,0 +1,16 @@
+enum ProjectStatus {
+    BIDDING,
+    EVALUATING,
+    END,
+}
+
+type Project @key(fields: "id"){
+    id: ID
+    name: String
+    description: String
+    status: ProjectStatus
+}
+
+type Query {
+    project: Project
+}
