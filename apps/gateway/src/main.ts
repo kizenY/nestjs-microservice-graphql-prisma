@@ -5,5 +5,6 @@ import { GATEWAY_PORT } from 'config/config.microservice';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(GATEWAY_PORT);
+  console.log('gateway has been started')
 }
 bootstrap();

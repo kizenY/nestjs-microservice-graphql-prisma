@@ -4,12 +4,8 @@ import { TENDER_NAME, TENDER_TRANSPORT, TENDER_PORT } from 'config/config.micros
 import { MicroserviceOptions } from '@nestjs/microservices';
 
 async function bootstrap() {
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
-    transport: TENDER_TRANSPORT,
-    options: {
-      port: TENDER_PORT
-    }
-  });
-  await app.listen(() => { console.log('tender started') });
+  const app = await NestFactory.create(AppModule);
+  await app.listen(TENDER_PORT);
+  console.log('tender service has been started')
 }
 bootstrap();

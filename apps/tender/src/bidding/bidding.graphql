@@ -1,0 +1,16 @@
+scalar GraphQLTimestamp
+
+type Bidding @key(fields: "id"){
+    id: ID
+    biddingDeadline: GraphQLTimestamp
+    project: [Project]
+}
+
+extend type Project{
+    id: ID!
+    bidding: Bidding
+}
+
+type Query {
+    bidding: Bidding
+}
