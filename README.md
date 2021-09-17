@@ -1,6 +1,7 @@
 # nestjs-microservice-graphql-prisma
 一个使用Nestjs搭建的微服务简易Demo项目，融合graphql、prisma等技术，同时做到尽量完善的单元测试覆盖。
 本项目以 投标系统 作为设想需求，使用者分为管理员、供应商、评标人三种角色，主要数据为 项目、用户。
+
 A demo microservice program build by Nestjs .It combines of graphql,prisma and so on techs, while pretending to cover all with uint test.
 In terms of hypothetical function, the program was designed for biding, and has three charactors: manager,supplier, evaluator.
 
